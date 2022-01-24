@@ -3,3 +3,8 @@ const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt'
 let input = fs.readFileSync(filePath).toString().trim().split('\n');
 // const input = fs.readFileSync('/dev/stdin).toString().split('\n');
 
+solution();
+
+function solution() {
+    //
+}
