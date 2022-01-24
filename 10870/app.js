@@ -3,8 +3,17 @@ const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt'
 let input = fs.readFileSync(filePath).toString().trim().split('\n');
 // const input = fs.readFileSync('/dev/stdin).toString().split('\n');
 
-input = input.toString().trim().split(" ");
-const array = input.map(element => [...element].reverse().join(''));
+input = input[0];
 
-// 기본 배열을 유지하고 싶다면, ... 깊은 복사하기
-console.log(array[0] > array[1] ? array[0] : array[1])
+function solution(num) {
+    if (num == 0) {
+        return 0;
+    } else if (num==1) {
+        return 1;
+    } else {
+        return solution(num-1) + solution(num-2);
+    }
+}
+
+console.log(solution(input));
+

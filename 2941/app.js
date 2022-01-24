@@ -6,7 +6,11 @@ let input = fs.readFileSync(filePath).toString().trim().split('\n');
 input = input[0];
 
 function solution(input) {
-    return
+    let words = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z='];
+    for (let word of words) {
+        input = input.split(word).join('@');
+    }
+    return input.length;
 }
 
 console.log(solution(input));
